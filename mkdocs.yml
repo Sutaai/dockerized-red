@@ -1,0 +1,80 @@
+site_name: Dockerized Red
+site_description: Documentation for Dockerized Red
+site_author: Sutaai
+repo_url: https://github.com/Sutaai/dockerized-red
+
+use_directory_urls: true
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.sections
+    - content.code.copy
+    - toc.integrate
+
+  font:
+    text: Poppins
+    code: JetBrains Mono
+  
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  palette: 
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Host using Docker: user_guides/use-docker.md
+    - Host using Docker Compose: user_guides/use-docker-compose.md
+    - Tutorials:
+      - Add a SSH key for private repositories: user_guides/add-ssh-key.md
+  - References:
+    - Variables: references/variables.md
+    - Editable variables: references/editable-vars.md
+    - Build arguments: references/build-args.md
+  - About: about.md
+
+copyright: Project licensed under the MIT license.
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Sutaai/dockerized-red
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/sutaai/dockerized-red
+
+
+plugins: 
+  - search
+  - privacy
+
+markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+strict: true
+watch:
+  - docs

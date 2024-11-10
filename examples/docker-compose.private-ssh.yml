@@ -1,0 +1,17 @@
+services:
+  bot:
+    image: sutaai/dockerized-red
+    volumes:
+      - data:/app
+    environment:
+      INSTANCE_NAME: bot
+      STORAGE: json
+    secrets:
+      - ssh-key
+
+volumes:
+  data:
+
+secrets:
+  ssh-key:
+    file: /home/sutaai/.ssh/id_ed25519

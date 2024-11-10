@@ -1,0 +1,13 @@
+services:
+  bot:
+    image: sutaai/dockerized-red
+    volumes:
+      - bot-data:/app
+    environment:
+      INSTANCE_NAME: bot
+      STORAGE: json
+      REDBOT_PACKAGE_URL: git+https://github.com/Cog-Creator/Red-DiscordBot.git
+      REDBOT_ARGS: --dev
+
+volumes:
+  bot-data:

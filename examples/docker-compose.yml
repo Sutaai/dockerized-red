@@ -1,0 +1,11 @@
+services:
+  bot:
+    image: sutaai/dockerized-red
+    volumes:
+      - bot-data:/app
+    environment:
+      INSTANCE_NAME: bot
+      STORAGE: json
+
+volumes:
+  bot-data:

@@ -1,0 +1,21 @@
+services:
+  bot:
+    build:
+      context: .
+    volumes:
+      - data:/app
+    environment:
+      TOKEN: ${TOKEN}
+      PREFIX: ${PREFIX}
+      STORAGE: json
+      PIP_UPGRADE: true
+      VERBOSE_LEVEL: 5
+    secrets:
+      - ssh-key
+
+volumes:
+  data:
+
+secrets:
+  ssh-key:
+    file: ${SSH_KEY_LOCATION}

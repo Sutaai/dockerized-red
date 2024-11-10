@@ -18,5 +18,6 @@ docker run \
   -e TOKEN=${RED_TOKEN} \
   -e PREFIX=${RED_PREFIX} \
   -e STORAGE=json \
-  -v ./redbot-data:/data
+  -v ./redbot-data:/data \
+  sutaai/dockerized-red
 ```

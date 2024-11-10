@@ -5,9 +5,18 @@ export INSTANCE_NAME="${INSTANCE_NAME:-bot}"
 
 # Add SSH key to agent, if it exists.
 if [ -f /run/secrets/ssh-key ]; then
-    echo "Adding SSH key to agent"
-    eval "$(ssh-agent -s)"
-    ssh-add /run/secrets/ssh-key
+  echo "Adding SSH key to agent"
+  eval "$(ssh-agent -s)"
+  ssh-add /run/secrets/ssh-key
+
+  # Add hosts in TRUST_HOSTS to known_hosts
+  # Only useful if SSH is used to clone repos
+  if [ -n "${TRUST_HOSTS:-github.com}" ]; then
+    for host in $(echo "$TRUST_HOSTS" | sed "s/,/ /g"); do
+      echo "Adding $host to known_hosts"
+      ssh-keyscan "$host" >>~/.ssh/known_hosts
+    done
+  fi
 fi
 
 # Create (If required) and enable the virtual environnement, also download dependencies

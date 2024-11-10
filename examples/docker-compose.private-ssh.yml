@@ -4,8 +4,10 @@ services:
     volumes:
       - data:/app
     environment:
+      TOKEN: $REDBOT_TOKEN
       INSTANCE_NAME: bot
       STORAGE: json
+      TRUST_HOSTS: github.com
     secrets:
       - ssh-key
 

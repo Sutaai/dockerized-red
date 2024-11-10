@@ -43,6 +43,12 @@ If you rather wish to *edit* your bot's settings, visit the [editable variables]
 | `PSQL_PASSWORD` | Only use if [`STORAGE`](#general) is set to `postgres`. Set the password that will be used to connect to the database. Defaults to the `PSQL_USER` variable. | No. | Value of `PSQL_USER` |
 | `PSQL_DATABASE` | Only use if [`STORAGE`](#general) is set to `postgres`. Set the database that will be used by the bot. Default to `postgres`. Defaults to the `PSQL_USER` variable. | No. | Value of `PSQL_USER` |
 
+## SSH options
+
+| Variable | Description | Required? |
+| -------- | ----------- | --------- |
+| `TRUST_HOSTS` | Set which hosts to trust. See [this guide](../user_guides/add-ssh-key.md#add-an-host-to-trust) for more explanation. You can add multiple hosts, separated with `,`. | `github.com` |
+
 ## The trio of danger
 
 ⚠️ These options can be considered dangerous. Understand your action before going all crazy.

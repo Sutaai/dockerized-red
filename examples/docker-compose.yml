@@ -4,7 +4,8 @@ services:
     volumes:
       - bot-data:/app
     environment:
-      INSTANCE_NAME: bot
+      TOKEN: $REDBOT_TOKEN
+      PREFIX: !
       STORAGE: json
 
 volumes:

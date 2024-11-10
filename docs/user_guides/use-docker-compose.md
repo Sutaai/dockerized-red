@@ -7,8 +7,8 @@ Below is a quick-start compose file you can use. Place its content into a file c
 ```yaml title="compose.yaml"
 services:
   bot:
-    restart: unless-stopped
     image: sutaai/dockerized-red
+    restart: unless-stopped
     volumes:
       - bot-data:/app
     environment:
@@ -31,11 +31,11 @@ There might be a point where the published Docker image is not enough for you. T
 
 Whenever that happens, you can build your own image with your own arguments that will be passed during the image's build.
 
-You can build your own image with Docker Compose, using the `build:` key instead of `image:`, and replace the value with the URL of the repository.
+You can build your own image with Docker Compose, using the `#!yaml build:` key instead of `#!yaml image:`, and replace the value with the URL of the repository.
 
 The changes look like this:
 
-```yaml
+```yaml title="compose.yaml"
 services:
   bot:
     {--image: ReplaceMe--}
@@ -43,6 +43,8 @@ services:
     ...
 ```
 
+To know which variables you can use, see the [references of build arguments](../references/build-args.md).
+
 ## Find more examples
 
-You can find more example on the [repository](https://github.com/Sutaai/dockerized-red), in the `examples` folder.
+You can find more example on the [repository](https://github.com/Sutaai/dockerized-red), in the `examples/` folder.

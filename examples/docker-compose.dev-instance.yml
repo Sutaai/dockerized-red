@@ -4,6 +4,7 @@ services:
     volumes:
       - bot-data:/app
     environment:
+      TOKEN: $REDBOT_TOKEN
       INSTANCE_NAME: bot
       STORAGE: json
       REDBOT_PACKAGE_URL: git+https://github.com/Cog-Creator/Red-DiscordBot.git

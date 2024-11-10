@@ -4,6 +4,7 @@ services:
     volumes:
       - bot-data:/app
     environment:
+      TOKEN: $REDBOT_TOKEN
       INSTANCE_NAME: bot
       STORAGE: postgres
       PSQL_HOST: db

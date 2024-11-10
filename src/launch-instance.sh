@@ -58,7 +58,7 @@ handle_term() {
 wait_term() {
   term_child_pid=$!
   if [ -n "${term_kill_needed:-}" ]; then
-    kill -TERM "${term_child_pid}" 2>/dev/null 
+    kill -TERM "${term_child_pid}" 2>/dev/null
   fi
   wait ${term_child_pid} 2>/dev/null
   trap - TERM INT
@@ -71,7 +71,7 @@ wait_term() {
 RETURN_CODE=26
 while [ "${RETURN_CODE}" -eq 26 ]; do
   echo "Booting up instance..."
-  set +e  # Avoid container exiting if we get any other error code that isn't 0
+  set +e # Avoid container exiting if we get any other error code that isn't 0
 
   # Check if stdin is a terminal
   if [ -t 0 ]; then

@@ -1,15 +1,14 @@
 [project]
 name = "dockerized-red"
-version = "1.0.0"
-description = "Default template for PDM package"
+version = "1.0.1"
+description = "Docker image for Red-DiscordBot"
 authors = [
     {name = "Sutaai", email = "sutaai@proton.me"},
 ]
 dependencies = ["mkdocs>=1.6.1", "mkdocs-material>=9.5.44"]
 requires-python = "<=3.14"
 readme = "README.md"
-license = {text = "MIT"}
-
+license = {file = "LICENSE"}
 
 [tool.pdm]
 distribution = false

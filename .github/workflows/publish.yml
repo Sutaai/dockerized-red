@@ -5,6 +5,7 @@ on:
     paths:
       - src/*
       - Dockerfile
+      - .github/workflows/publish.yml
 
     branches: [ "main" ]
     tags: [ 'v*.*.*' ]
@@ -57,6 +58,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: ${{ env.REGISTRY_IMAGE }}:latest
           labels: ${{ steps.meta.outputs.labels }}

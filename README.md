@@ -1,3 +1,5 @@
+# Dockerized Red
+
 ![Dockerized Red Logo](docs/assets/dockerized-red.png)
 
 This Docker image provides you a declarative way to fire up an instance of [Red-DiscordBot](https://github.com/Cog-Creator/Red-DiscordBot).

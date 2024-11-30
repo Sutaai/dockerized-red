@@ -12,9 +12,10 @@ if [ -f /run/secrets/ssh-key ]; then
   # Add hosts in TRUST_HOSTS to known_hosts
   # Only useful if SSH is used to clone repos
   if [ -n "${TRUST_HOSTS:-github.com}" ]; then
+    mkdir -p ~/.ssh
     for host in $(echo "$TRUST_HOSTS" | sed "s/,/ /g"); do
       echo "Adding $host to known_hosts"
-      ssh-keyscan "$host" >>~/.ssh/known_hosts
+      ssh-keyscan "$host" >> ~/.ssh/known_hosts
     done
   fi
 fi

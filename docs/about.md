@@ -21,8 +21,8 @@ For technical differences:
 
 Inside the container, the following paths are used:
 
-| Path | Description |
-| ---- | ----------- |
-| `/data` | Used for storing all data of the bot. Contains its virtual environment (venv), bot's settings, downloaded cogs and logs. This MUST be saved by the user. |
-| `/usr/src/dockerized-red` | Contains the scripts used for launching the Red instance. Available at `src` on the code's repository. |
-| `/run/secrets/ssh-key` | In case the user wish to add its SSH key (For reading private repositories for example), this file will be read and added onto the container's SSH agent. |
+| Path                      | Description                                                                                                                                               |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/data`                   | Used for storing all data of the bot. Contains its virtual environment (venv), bot's settings, downloaded cogs and logs. This MUST be saved by the user.  |
+| `/usr/src/dockerized-red` | Contains the scripts used for launching the Red instance. Available at `src` on the code's repository.                                                    |
+| `/run/secrets/ssh-key`    | In case the user wish to add its SSH key (For reading private repositories for example), this file will be read and added onto the container's SSH agent. |

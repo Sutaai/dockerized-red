@@ -1,6 +1,10 @@
 #!/usr/bin/env sh
+set -euf
 
-set -eufx
+# Enable debug mode
+if [ -n "${SCRIPT_DEBUG:-}" ]; then
+  set -x
+fi
 
 if [ "$STORAGE" = "postgres" ]; then
   if [ -z "${PSQL_HOST:-}" ]; then

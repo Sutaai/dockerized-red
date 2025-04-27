@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
-set -eufx
+set -euf
+
+# Enable debug mode
+if [ -n "${SCRIPT_DEBUG:-}" ]; then
+  set -x
+fi
 
 # The 26 error code is used to request a restart
 # See https://github.com/Cog-Creators/Red-DiscordBot/blob/30058c0f732ffcf82124bab8781f8b33d1353de4/redbot/core/_cli.py#L16

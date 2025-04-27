@@ -1,6 +1,11 @@
 #!/usr/bin/env sh
 set -euf
 
+# Enable debug mode
+if [ -n "${SCRIPT_DEBUG:-}" ]; then
+  set -x
+fi
+
 if [ -n "${EDIT_TOKEN:-}" ]; then
   python -0 -m redbot "${INSTANCE_NAME}" --no-prompt --edit --token "${EDIT_TOKEN}"
   echo "Token edited"

@@ -45,9 +45,9 @@ If you rather wish to *edit* your bot's settings, visit the [editable variables]
 
 ## SSH options
 
-| Variable | Description | Required? |
-| -------- | ----------- | --------- |
-| `TRUST_HOSTS` | Set which hosts to trust. See [this guide](../user_guides/add-ssh-key.md#add-an-host-to-trust) for more explanation. You can add multiple hosts, separated with `,`. | `github.com` |
+| Variable | Description | Required? | Default |
+| -------- | ----------- | --------- | ------- |
+| `TRUST_HOSTS` | Set which hosts to trust. See [this guide](../user_guides/add-ssh-key.md#add-an-host-to-trust) for more explanation. You can add multiple hosts, separated with `,`. | No. | `github.com` |
 
 ## The trio of danger
 
@@ -55,6 +55,6 @@ If you rather wish to *edit* your bot's settings, visit the [editable variables]
 
 | Variable | Description | Required? |
 | -------- | ----------- | --------- |
-| `OWNER` | ID of the owner who owns the bot. The person you indicate here will have full control both on the bot, and can interact inside the container. You've been warned. | No. |
+| `OWNER` | ID of the owner who owns the bot. The person you indicate here will have full control both on the bot, and can interact inside the container. You've been warned. By default, the bot will set it to the application's owner. | No. |
 | `CO_OWNER` | ID of any co owner who may own the bot in addition to the owner. Separated by spaces. The person you indicate here will have full control both on the bot, and can interact inside the container. You've been warned. | No. |
 | `TEAM_MEMBERS_ARE_OWNERS` | Indicates that team members can run owner specific commands. They will have full control both on the bot, and can interact inside the container. You've been warned. | No. |

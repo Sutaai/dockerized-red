@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
-set -eufx
+set -euf
+
+# Enable debug mode
+if [ -n "${SCRIPT_DEBUG:-}" ]; then
+  set -x
+fi
 
 export INSTANCE_NAME="${INSTANCE_NAME:-bot}"
 
@@ -19,6 +24,9 @@ if [ -f /run/secrets/ssh-key ]; then
     done
   fi
 fi
+
+# Just to check if required parameters have been passed.
+. /usr/src/dockerized-red/check-required-parameters.sh
 
 # Create (If required) and enable the virtual environnement, also download dependencies
 # shellcheck source=venv-activate.sh

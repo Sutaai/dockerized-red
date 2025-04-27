@@ -3,19 +3,23 @@ services:
     build:
       context: .
     volumes:
-      - data:/app
+      - ./data:/app
     environment:
       TOKEN: ${TOKEN}
       PREFIX: ${PREFIX}
       STORAGE: json
+      SCRIPT_DEBUG: true
       PIP_UPGRADE: true
       VERBOSE_LEVEL: 5
-    secrets:
-      - ssh-key
+    # secrets:
+    #   - ssh-key
 
 volumes:
   data:
 
-secrets:
-  ssh-key:
-    file: ${SSH_KEY_LOCATION}
+# This is commented to not make it a hard requirement during development.
+# Feel free to uncomment, but please, do not commit it, or I'll just ask you to revert
+# back to its original state.
+# secrets:
+#   ssh-key:
+#     file: ${SSH_KEY_LOCATION}

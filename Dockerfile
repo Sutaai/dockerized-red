@@ -14,12 +14,12 @@ RUN set -eux; \
 # Required deps
 RUN set -eux; \
   apt install -y --no-install-recommends \
-    build-essential git jq ssh
+  build-essential git jq ssh
 
 # Additional deps set by user
 RUN set -eux; \
   if [ -n "${APT_INSTALL:-}" ]; then \
-    apt install -y --no-install-recommends ${APT_INSTALL}; \
+  apt install -y --no-install-recommends ${APT_INSTALL}; \
   fi
 
 VOLUME [ "/data" ]

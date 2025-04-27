@@ -3,7 +3,7 @@
 The following is a list of variables you can use to setup your bot.
 
 Those variables are used at the bot's runtime. They will not be stored permanently and will be reused at the container's start.
-If you rather wish to _edit_ your bot's settings, visit the [editable variables](editable-vars.md) page.
+If you rather wish to _edit_ your bot's settings (Not recommended), visit the [editable variables](editable-vars.md) page.
 
 ## General
 
@@ -23,12 +23,13 @@ If you rather wish to _edit_ your bot's settings, visit the [editable variables]
 | `ENABLE_RPC`    | Enable the bot's RPC server. See <https://docs.discord.red/en/stable/framework_rpc.html>                  | No.       | Not enabled                          |
 | `RPC_PORT`      | Set the RPC's server port.                                                                                | No.       | `6133` (Default from Red-DiscordBot) |
 | `VERBOSE_LEVEL` | Increase logs verbosity. This should be a number from 1 to 5, 5 being the highest level of verbosity.     | No.       | Default (0)                          |
+| `SCRIPT_DEBUG`  | Increase logs verbosity for the image's scripts. Will show absolutely all commands ran in the terminal.   | No.       | Not enabled                          |
 
 ## Redbot package
 
 | Variable                | Description                                                                                                                                                                                                  | Required? | Default                                  |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ---------------------------------------- |
-| `PIP_UGRADE`            | pip specific option. Will forcefully upgrade packages if set. Set anything to enable. You can check others options [here](https://pip.pypa.io/en/stable/cli/pip_install/#options), but are less supported.   | No.       | Will not automatically upgrade           |
+| `PIP_UPGRADE`            | pip specific option. Will forcefully upgrade packages if set. Set anything to enable. You can check others options [here](https://pip.pypa.io/en/stable/cli/pip_install/#options), but are less supported.   | No.       | Will not automatically upgrade           |
 | `REDBOT_VERSION`        | The version of Red-DiscordBot to install. If not specific, this will default to the latest version of Red. If you wish to always obtain the latest version of Red-DiscordBot, set `PIP_UPGRADE` to anything. | No.       | Latest version upon first container boot |
 | `REDBOT_PACKAGE_URL`    | Not intended for the general user. Use this if you wish to install Red-DiscordBot through the use of an URL instead of installing a PyPI package. Useful for installing from a Git repository.               | No.       | N/A                                      |
 | `REDBOT_PACKAGE_EXTRAS` | Not intended for the general user. Declare a list of additional extras to install with Red-DiscordBot when `pip install` will run. (`pip install Red-DiscordBot[Extras are here]`)                           | No.       | None                                     |

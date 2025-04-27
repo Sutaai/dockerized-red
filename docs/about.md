@@ -11,11 +11,13 @@ Second is, I am not a developer. I am a simple sys admin, I want to do things fa
 For technical differences:
 
 - PhasecoreX's image does not much usage of environment variables to setup your bot, making usage with tools like [Portainer](https://www.portainer.io/) difficult.
-- PhasecoreX's image goal is to support third party cogs by creating specific tags (Such as "noaudio", "extra", etc.), whereas I would allow to do so through dependencies declaration. (YOU, the user, say what dependencies you require)
-- PhasecoreX's image will always fetch a latest version of Red upon restart. Will I do believe this isn't so bad, I am unsure if this is the way to go for testing earlier releases of Red-DiscordBot. I allow you to do so, but you have first to say so.
-- PhasecoreX's image does not allow the usage of SSH keys, making cloning of private repositories impossible.
+- PhasecoreX's image has specific tags for specific purposes (Such as "noaudio", "extra", etc.), whereas this image allows you only to specifies dependencies to download.
+- PhasecoreX's image will always fetch a latest version of Red upon restart. Will I do believe this isn't so bad, I am unsure if this is the way to go. I allow you to do so, but you have to implicitly declare to auto update.
+- PhasecoreX's image has no support of SSH keys, making cloning of private repositories impossible.
 - PhasecoreX's image is very opinionated towards the JSON config driver.
 - PhasecoreX's has no docs. A README doesn't count. Sorry. :(
+- PhasecoreX's can run rootless. I only do rootful. This may have security implication.
+- PhasecoreX's has a [cog that integrates with their Docker images for updates](<https://github.com/PhasecoreX/PCXCogs>).
 
 ## Image's actions
 

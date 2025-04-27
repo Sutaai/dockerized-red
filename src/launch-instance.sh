@@ -22,6 +22,10 @@ if [ -n "${ENABLE_RPC:-}" ]; then
   ARGS="${ARGS} --rpc"
 fi
 
+if [ -n "${ENABLE_DEV:-}" ]; then
+  ARGS="${ARGS} --dev"
+fi
+
 if [ -n "${RPC_PORT:-}" ]; then
   ARGS="${ARGS} --rpc-port ${RPC_PORT:-6133}"
 fi

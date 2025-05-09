@@ -7,14 +7,14 @@ To use build arguments in Docker Compose, do the following:
 ```yaml title="compose.yaml"
 services:
   bot:
-    build: 
+    build:
       context: https://github.com/Sutaai/dockerized-red
       args:
         ARGUMENTS: here
     ...
 ```
 
-| Variable | Description |
-| -------- | ----------- |
-| `PYTHON_VERSION` | The version of Python you wish to use when running Red-DiscordBot. |
-| `APT_INSTALL` | Additional packages to install during build. This is done during build time and not runtime to avoid downloading packages every time you reboot the container. |
+| Variable         | Description                                                                                                                                                    |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `PYTHON_VERSION` | The version of Python you wish to use when running Red-DiscordBot.                                                                                             |
+| `APT_INSTALL`    | Additional packages to install during build. This is done during build time and not runtime to avoid downloading packages every time you reboot the container. |

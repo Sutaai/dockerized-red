@@ -1,8 +1,14 @@
 #!/usr/bin/env sh
-set -eufx
+set -euf
 
-# Does the venv exist?
+# Enable debug mode
+if [ -n "${SCRIPT_DEBUG:-}" ]; then
+  set -x
+fi
+
+# Does the venv not exist? Create it then
 if [ ! -d "/data/.venv" ]; then
+  echo "Creating venv. This may take some time..."
   python -m venv /data/.venv
 fi
 
